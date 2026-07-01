@@ -1,0 +1,43 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 0,
+    "patch": 3
+  },
+
+  "configurePresets": [
+    {
+      "name": "windows-clangcl-release",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/bld",
+
+      "cacheVariables": {
+        "CMAKE_SYSTEM_NAME": "Windows",
+        "CMAKE_SYSTEM_PROCESSOR": "x86_64",
+
+        "CMAKE_BUILD_TYPE": "Release",
+
+        "CMAKE_CXX_COMPILER": "/home/deck/Documents/llvm-project/build/bin/clang-cl",
+        "CMAKE_RC_COMPILER": "/home/deck/Documents/llvm-project/build/bin/llvm-rc",
+
+        "CMAKE_LINKER": "/home/deck/Documents/llvm-project/build/bin/lld-link",
+        "CMAKE_AR": "/home/deck/Documents/llvm-project/build/bin/llvm-lib",
+        "CMAKE_RANLIB": "/home/deck/Documents/llvm-project/build/bin/llvm-ranlib",
+
+        "CMAKE_RC_STANDARD_INCLUDE_DIRECTORIES": "/home/deck/Downloads/xwin-0.6.5-x86_64-unknown-linux-musl/redist/sdk/include/um;/home/deck/Downloads/xwin-0.6.5-x86_64-unknown-linux-musl/redist/sdk/include/shared",
+        "CMAKE_CXX_FLAGS_INIT": "/std:c++20 /winsdkdir /home/deck/Downloads/xwin-0.6.5-x86_64-unknown-linux-musl/redist/sdk /vctoolsdir /home/deck/Downloads/xwin-0.6.5-x86_64-unknown-linux-musl/redist/crt",
+        "CMAKE_EXE_LINKER_FLAGS_INIT": "/machine:x64 /manifest:no /libpath:/home/deck/Downloads/xwin-0.6.5-x86_64-unknown-linux-musl/redist/sdk/lib/um/x64 /libpath:/home/deck/Downloads/xwin-0.6.5-x86_64-unknown-linux-musl/redist/sdk/lib/ucrt/x64 /libpath:/home/deck/Downloads/xwin-0.6.5-x86_64-unknown-linux-musl/redist/crt/lib/x64",
+        "CMAKE_SHARED_LINKER_FLAGS_INIT": "/machine:x64 /manifest:no /libpath:/home/deck/Downloads/xwin-0.6.5-x86_64-unknown-linux-musl/redist/sdk/lib/um/x64 /libpath:/home/deck/Downloads/xwin-0.6.5-x86_64-unknown-linux-musl/redist/sdk/lib/ucrt/x64 /libpath:/home/deck/Downloads/xwin-0.6.5-x86_64-unknown-linux-musl/redist/crt/lib/x64"
+      }
+    }
+  ],
+
+  "buildPresets": [
+    {
+      "name": "windows-clangcl-release",
+      "configurePreset": "windows-clangcl-release",
+      "jobs": 8
+    }
+  ]
+}
